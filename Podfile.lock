@@ -1,3 +1,30 @@
-PODFILE CHECKSUM: 62086f43bd04928af60349492510c69ceae3bdd7
+PODS:
+  - IQKeyboardManagerSwift (6.3.0)
+  - Kingfisher (5.14.0):
+    - Kingfisher/Core (= 5.14.0)
+  - Kingfisher/Core (5.14.0)
+  - ProgressHUD (13.6)
+  - STPopup (1.8.7)
+
+DEPENDENCIES:
+  - IQKeyboardManagerSwift (= 6.3.0)
+  - Kingfisher (= 5.14.0)
+  - ProgressHUD
+  - STPopup
+
+SPEC REPOS:
+  trunk:
+    - IQKeyboardManagerSwift
+    - Kingfisher
+    - ProgressHUD
+    - STPopup
+
+SPEC CHECKSUMS:
+  IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
+  Kingfisher: 7b64389a43139c903ec434788344c288217c792d
+  ProgressHUD: 4bdaa0d2ddf676b23324b199f9facffb5c3a1620
+  STPopup: a9045557bc48a0df51fbb7bf0544447c5fe84d34
+
+PODFILE CHECKSUM: 7c5e7543979a6e7c80d3cbb5df0b71fa35a2fe4d
 
 COCOAPODS: 1.11.3

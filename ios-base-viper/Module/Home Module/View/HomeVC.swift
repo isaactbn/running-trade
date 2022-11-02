@@ -14,15 +14,15 @@ protocol HomeView: BaseView {
     func update(with error: String)
 }
 
-class HomeVC: UIViewController, HomeView {
+class HomeVC: BaseVC, HomeView {
     var presenter: HomePresenter?
     
     func update(with data: [HomeBodyFullResponse]) {
-        <#code#>
+        
     }
     
     func update(with error: String) {
-        <#code#>
+        
     }
     
 

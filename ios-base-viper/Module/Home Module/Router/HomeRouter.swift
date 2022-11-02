@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-typealias EntryPoint = HomeView & UIViewController
+typealias EntryPoint = HomeView & BaseVC
 
 protocol HomeRouter {
     var entry: EntryPoint? { get }

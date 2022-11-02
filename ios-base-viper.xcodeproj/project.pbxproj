@@ -18,10 +18,9 @@
 		6AB3127D2910FB2A0062E153 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB3127B2910FB2A0062E153 /* HomeVC.xib */; };
 		6ACB9F9229127BE700930262 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB9F9129127BE700930262 /* BaseVC.swift */; };
 		6ACB9F9429127BF200930262 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB9F9329127BF200930262 /* BaseView.swift */; };
+		6ACB9F982912901F00930262 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB9F972912901F00930262 /* Request.swift */; };
 		6AD9697529103D8000227940 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD9697429103D8000227940 /* AppDelegate.swift */; };
 		6AD9697729103D8000227940 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD9697629103D8000227940 /* SceneDelegate.swift */; };
-		6AD9697929103D8000227940 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD9697829103D8000227940 /* ViewController.swift */; };
-		6AD9697C29103D8000227940 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AD9697A29103D8000227940 /* Main.storyboard */; };
 		6AD9697E29103D8100227940 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AD9697D29103D8100227940 /* Assets.xcassets */; };
 		6AD9698129103D8100227940 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AD9697F29103D8100227940 /* LaunchScreen.storyboard */; };
 		6AD9698C29103D8100227940 /* ios_base_viperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD9698B29103D8100227940 /* ios_base_viperTests.swift */; };
@@ -56,11 +55,10 @@
 		6AB3127B2910FB2A0062E153 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 		6ACB9F9129127BE700930262 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		6ACB9F9329127BF200930262 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		6ACB9F972912901F00930262 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		6AD9697129103D8000227940 /* ios-base-viper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-base-viper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD9697429103D8000227940 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AD9697629103D8000227940 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6AD9697829103D8000227940 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6AD9697B29103D8000227940 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6AD9697D29103D8100227940 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6AD9698029103D8100227940 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6AD9698229103D8100227940 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -184,6 +182,8 @@
 		6ACB9F8D29124D8E00930262 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				6ACB9F962912851900930262 /* Network */,
+				6ACB9F952912851400930262 /* Helper */,
 				6ACB9F8E29127B9A00930262 /* Base */,
 			);
 			path = Component;
@@ -196,6 +196,21 @@
 				6ACB9F9329127BF200930262 /* BaseView.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		6ACB9F952912851400930262 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		6ACB9F962912851900930262 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6ACB9F972912901F00930262 /* Request.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		6AD9696829103D8000227940 = {
@@ -227,8 +242,6 @@
 				6ACB9F8C29124D5500930262 /* Module */,
 				6AD9697429103D8000227940 /* AppDelegate.swift */,
 				6AD9697629103D8000227940 /* SceneDelegate.swift */,
-				6AD9697829103D8000227940 /* ViewController.swift */,
-				6AD9697A29103D8000227940 /* Main.storyboard */,
 				6AD9697D29103D8100227940 /* Assets.xcassets */,
 				6AD9697F29103D8100227940 /* LaunchScreen.storyboard */,
 				6AD9698229103D8100227940 /* Info.plist */,
@@ -274,6 +287,7 @@
 				6AD9696D29103D8000227940 /* Sources */,
 				6AD9696E29103D8000227940 /* Frameworks */,
 				6AD9696F29103D8000227940 /* Resources */,
+				279A3381EAA57AA449AE7394 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -311,6 +325,7 @@
 				6AD9698D29103D8100227940 /* Sources */,
 				6AD9698E29103D8100227940 /* Frameworks */,
 				6AD9698F29103D8100227940 /* Resources */,
+				B464FFDD3EA7E7026F4899BF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -373,7 +388,6 @@
 				6AD9698129103D8100227940 /* LaunchScreen.storyboard in Resources */,
 				6AB3127D2910FB2A0062E153 /* HomeVC.xib in Resources */,
 				6AD9697E29103D8100227940 /* Assets.xcassets in Resources */,
-				6AD9697C29103D8000227940 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +408,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		279A3381EAA57AA449AE7394 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios-base-viper/Pods-ios-base-viper-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios-base-viper/Pods-ios-base-viper-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ios-base-viper/Pods-ios-base-viper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3A69B2E1F32528F0A8C5D804 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -460,6 +491,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B464FFDD3EA7E7026F4899BF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios-base-viper-ios-base-viperUITests/Pods-ios-base-viper-ios-base-viperUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios-base-viper-ios-base-viperUITests/Pods-ios-base-viper-ios-base-viperUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ios-base-viper-ios-base-viperUITests/Pods-ios-base-viper-ios-base-viperUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -467,10 +515,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AD9697929103D8000227940 /* ViewController.swift in Sources */,
 				6AB3127C2910FB2A0062E153 /* HomeVC.swift in Sources */,
 				6AB312712910F7540062E153 /* HomeRouter.swift in Sources */,
 				6AD9697529103D8000227940 /* AppDelegate.swift in Sources */,
+				6ACB9F982912901F00930262 /* Request.swift in Sources */,
 				6ACB9F9229127BE700930262 /* BaseVC.swift in Sources */,
 				6AB312752910F77A0062E153 /* HomePresenter.swift in Sources */,
 				6AB312732910F7710062E153 /* HomeEntity.swift in Sources */,
@@ -513,14 +561,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6AD9697A29103D8000227940 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6AD9697B29103D8000227940 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6AD9697F29103D8100227940 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -658,7 +698,6 @@
 				INFOPLIST_FILE = "ios-base-viper/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -686,7 +725,6 @@
 				INFOPLIST_FILE = "ios-base-viper/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

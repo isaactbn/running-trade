@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+protocol BaseView {
+    func showError(msg: String)
+    func onLoading()
+    func onFinishLoading()
+}
