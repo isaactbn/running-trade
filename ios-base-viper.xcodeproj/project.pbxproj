@@ -10,6 +10,14 @@
 		0E9B3E25E106918DFC432BA0 /* Pods_ios_base_viperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1838F1AE13606AF5556CE54 /* Pods_ios_base_viperTests.framework */; };
 		25ED820F40BCC3C5AC17964E /* Pods_ios_base_viper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA975E2AB631164106C15FDC /* Pods_ios_base_viper.framework */; };
 		38327E885B9DA894D5AF0DEC /* Pods_ios_base_viper_ios_base_viperUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 235D70CF983092C55D620A78 /* Pods_ios_base_viper_ios_base_viperUITests.framework */; };
+		6AB312712910F7540062E153 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB312702910F7540062E153 /* HomeRouter.swift */; };
+		6AB312732910F7710062E153 /* HomeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB312722910F7710062E153 /* HomeEntity.swift */; };
+		6AB312752910F77A0062E153 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB312742910F77A0062E153 /* HomePresenter.swift */; };
+		6AB312772910FAFB0062E153 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB312762910FAFB0062E153 /* HomeInteractor.swift */; };
+		6AB3127C2910FB2A0062E153 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB3127A2910FB2A0062E153 /* HomeVC.swift */; };
+		6AB3127D2910FB2A0062E153 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB3127B2910FB2A0062E153 /* HomeVC.xib */; };
+		6ACB9F9229127BE700930262 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB9F9129127BE700930262 /* BaseVC.swift */; };
+		6ACB9F9429127BF200930262 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB9F9329127BF200930262 /* BaseView.swift */; };
 		6AD9697529103D8000227940 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD9697429103D8000227940 /* AppDelegate.swift */; };
 		6AD9697729103D8000227940 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD9697629103D8000227940 /* SceneDelegate.swift */; };
 		6AD9697929103D8000227940 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD9697829103D8000227940 /* ViewController.swift */; };
@@ -40,6 +48,14 @@
 
 /* Begin PBXFileReference section */
 		235D70CF983092C55D620A78 /* Pods_ios_base_viper_ios_base_viperUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_base_viper_ios_base_viperUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AB312702910F7540062E153 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		6AB312722910F7710062E153 /* HomeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEntity.swift; sourceTree = "<group>"; };
+		6AB312742910F77A0062E153 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		6AB312762910FAFB0062E153 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		6AB3127A2910FB2A0062E153 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		6AB3127B2910FB2A0062E153 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
+		6ACB9F9129127BE700930262 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		6ACB9F9329127BF200930262 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		6AD9697129103D8000227940 /* ios-base-viper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-base-viper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD9697429103D8000227940 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AD9697629103D8000227940 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,8 +117,85 @@
 				E2133C31C1AFA02AC08BBB29 /* Pods-ios-base-viperTests.debug.xcconfig */,
 				BED51DA9AECC781ED5A1D243 /* Pods-ios-base-viperTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		6AB3126A2910F6E80062E153 /* Home Module */ = {
+			isa = PBXGroup;
+			children = (
+				6AB3126F2910F7160062E153 /* View */,
+				6AB3126E2910F7100062E153 /* Interactor */,
+				6AB3126D2910F7000062E153 /* Presenter */,
+				6AB3126C2910F6FA0062E153 /* Entity */,
+				6AB3126B2910F6F50062E153 /* Router */,
+			);
+			path = "Home Module";
+			sourceTree = "<group>";
+		};
+		6AB3126B2910F6F50062E153 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				6AB312702910F7540062E153 /* HomeRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		6AB3126C2910F6FA0062E153 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				6AB312722910F7710062E153 /* HomeEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		6AB3126D2910F7000062E153 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				6AB312742910F77A0062E153 /* HomePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		6AB3126E2910F7100062E153 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				6AB312762910FAFB0062E153 /* HomeInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		6AB3126F2910F7160062E153 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6AB3127A2910FB2A0062E153 /* HomeVC.swift */,
+				6AB3127B2910FB2A0062E153 /* HomeVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6ACB9F8C29124D5500930262 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				6AB3126A2910F6E80062E153 /* Home Module */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		6ACB9F8D29124D8E00930262 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				6ACB9F8E29127B9A00930262 /* Base */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		6ACB9F8E29127B9A00930262 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				6ACB9F9129127BE700930262 /* BaseVC.swift */,
+				6ACB9F9329127BF200930262 /* BaseView.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		6AD9696829103D8000227940 = {
@@ -130,6 +223,8 @@
 		6AD9697329103D8000227940 /* ios-base-viper */ = {
 			isa = PBXGroup;
 			children = (
+				6ACB9F8D29124D8E00930262 /* Component */,
+				6ACB9F8C29124D5500930262 /* Module */,
 				6AD9697429103D8000227940 /* AppDelegate.swift */,
 				6AD9697629103D8000227940 /* SceneDelegate.swift */,
 				6AD9697829103D8000227940 /* ViewController.swift */,
@@ -276,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AD9698129103D8100227940 /* LaunchScreen.storyboard in Resources */,
+				6AB3127D2910FB2A0062E153 /* HomeVC.xib in Resources */,
 				6AD9697E29103D8100227940 /* Assets.xcassets in Resources */,
 				6AD9697C29103D8000227940 /* Main.storyboard in Resources */,
 			);
@@ -372,8 +468,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AD9697929103D8000227940 /* ViewController.swift in Sources */,
+				6AB3127C2910FB2A0062E153 /* HomeVC.swift in Sources */,
+				6AB312712910F7540062E153 /* HomeRouter.swift in Sources */,
 				6AD9697529103D8000227940 /* AppDelegate.swift in Sources */,
+				6ACB9F9229127BE700930262 /* BaseVC.swift in Sources */,
+				6AB312752910F77A0062E153 /* HomePresenter.swift in Sources */,
+				6AB312732910F7710062E153 /* HomeEntity.swift in Sources */,
+				6ACB9F9429127BF200930262 /* BaseView.swift in Sources */,
 				6AD9697729103D8000227940 /* SceneDelegate.swift in Sources */,
+				6AB312772910FAFB0062E153 /* HomeInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

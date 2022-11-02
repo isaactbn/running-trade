@@ -6,6 +6,10 @@ target 'ios-base-viper' do
   use_frameworks!
 
   # Pods for ios-base-viper
+  pod 'IQKeyboardManagerSwift', '6.3.0'
+  pod 'ProgressHUD'
+  pod 'Kingfisher', '5.14.0'
+  pod 'STPopup'
 
   target 'ios-base-viperTests' do
     inherit! :search_paths
