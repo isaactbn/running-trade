@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionViewCell" customModule="ios_base_viper" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="138" height="56"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="138" height="56"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lQY-Ka-IfT">
+                        <rect key="frame" x="1" y="1" width="136" height="54"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pzf-Xa-ZxX">
+                                <rect key="frame" x="2" y="2" width="132" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wd2-gj-6A9">
+                                        <rect key="frame" x="8" y="16.5" width="116" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.83915400510000004" green="0.83537989850000005" blue="0.83137196300000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Wd2-gj-6A9" firstAttribute="centerY" secondItem="Pzf-Xa-ZxX" secondAttribute="centerY" id="98V-qy-hAC"/>
+                                    <constraint firstItem="Wd2-gj-6A9" firstAttribute="leading" secondItem="Pzf-Xa-ZxX" secondAttribute="leading" constant="8" id="Q6K-Q6-GBH"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wd2-gj-6A9" secondAttribute="trailing" constant="8" id="ed8-KL-Eiu"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Pzf-Xa-ZxX" secondAttribute="trailing" constant="2" id="0NA-Uq-zGn"/>
+                            <constraint firstAttribute="bottom" secondItem="Pzf-Xa-ZxX" secondAttribute="bottom" constant="2" id="KDX-qx-G7B"/>
+                            <constraint firstItem="Pzf-Xa-ZxX" firstAttribute="leading" secondItem="lQY-Ka-IfT" secondAttribute="leading" constant="2" id="ZNx-vb-pbg"/>
+                            <constraint firstItem="Pzf-Xa-ZxX" firstAttribute="top" secondItem="lQY-Ka-IfT" secondAttribute="top" constant="2" id="nii-3y-bEa"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="lQY-Ka-IfT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="1" id="08E-Br-ea7"/>
+                <constraint firstAttribute="trailing" secondItem="lQY-Ka-IfT" secondAttribute="trailing" constant="1" id="Fe0-t8-hGd"/>
+                <constraint firstItem="lQY-Ka-IfT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="sQg-4u-CcB"/>
+                <constraint firstAttribute="bottom" secondItem="lQY-Ka-IfT" secondAttribute="bottom" constant="1" id="sxZ-7s-JGO"/>
+            </constraints>
+            <size key="customSize" width="318" height="181"/>
+            <connections>
+                <outlet property="titleLabel" destination="Wd2-gj-6A9" id="cEP-5z-hfy"/>
+            </connections>
+            <point key="canvasLocation" x="325.36231884057975" y="125.22321428571428"/>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -11,6 +11,8 @@ protocol HomePresenter {
     var router: HomeRouter? { get set }
     var interactor: HomeInteractor? { get set }
     var view: HomeView? { get set }
+    var interval: String { get set }
+    var range: String { get set }
     
     func onGetHomeList(with result: Result<HomeBodyResponse, Error>)
 }
@@ -18,9 +20,14 @@ protocol HomePresenter {
 class HomePresentation: HomePresenter {
     var router: HomeRouter?
     
+    var symbol: String = "GOOG"
+    var interval: String = "1m"
+    var range: String = "1d"
+    
     var interactor: HomeInteractor? {
         didSet {
-            interactor?.getHomeList()
+            let bodyReq = HomeBodyRequest(interval: interval, range: range)
+            interactor?.getHomeList(body: bodyReq, symbol: symbol)
         }
     }
      
@@ -29,7 +36,20 @@ class HomePresentation: HomePresenter {
     func onGetHomeList(with result: Result<HomeBodyResponse, Error>) {
         switch result {
         case.success(let output):
-            var model: [HomeBodyFullResponse] = []
+            var model: [ResultModel] = []
+            output.chart?.result?.forEach{ (data) in
+                var timeStampModel: [Int64] = []
+                var count = 0
+                data.timestamp?.forEach{ (x) in
+                    if count <= 100 {
+                        timeStampModel.append(x)
+                    }
+                    count += 1
+                }
+                
+                let newResult = ResultModel(meta: data.meta, timestamp: timeStampModel, indicators: data.indicators)
+                model.append(newResult)
+            }
             
             view?.onFinishLoading()
             view?.update(with: model)

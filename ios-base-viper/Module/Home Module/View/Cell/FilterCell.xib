@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FilterCell" customModule="ios_base_viper" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="138" height="56"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="138" height="56"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ToT-Wh-lCk">
+                        <rect key="frame" x="0.0" y="0.0" width="138" height="56"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HLu-JY-PyO" userLabel="View Wrapper">
+                                <rect key="frame" x="2" y="2" width="134" height="52"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fNZ-bB-SgI">
+                                        <rect key="frame" x="6" y="6" width="122" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Add Stock" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taG-xT-4t8">
+                                                <rect key="frame" x="0.0" y="0.0" width="112" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" red="0.91855478290000003" green="0.59709304569999999" blue="0.26263663170000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hun-VN-um8">
+                                                <rect key="frame" x="112" y="0.0" width="10" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" red="0.91855478290000003" green="0.59709304569999999" blue="0.26263663170000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fNZ-bB-SgI" secondAttribute="trailing" constant="6" id="1hX-63-pml"/>
+                                    <constraint firstAttribute="bottom" secondItem="fNZ-bB-SgI" secondAttribute="bottom" constant="6" id="J0x-Qr-auG"/>
+                                    <constraint firstItem="fNZ-bB-SgI" firstAttribute="leading" secondItem="HLu-JY-PyO" secondAttribute="leading" constant="6" id="fbb-9h-f8m"/>
+                                    <constraint firstItem="fNZ-bB-SgI" firstAttribute="top" secondItem="HLu-JY-PyO" secondAttribute="top" constant="6" id="igU-Xr-COX"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="HLu-JY-PyO" secondAttribute="trailing" constant="2" id="0pE-ow-OD5"/>
+                            <constraint firstAttribute="bottom" secondItem="HLu-JY-PyO" secondAttribute="bottom" constant="2" id="H1G-mO-dlm"/>
+                            <constraint firstItem="HLu-JY-PyO" firstAttribute="leading" secondItem="ToT-Wh-lCk" secondAttribute="leading" constant="2" id="URG-Iy-tvD"/>
+                            <constraint firstItem="HLu-JY-PyO" firstAttribute="top" secondItem="ToT-Wh-lCk" secondAttribute="top" constant="2" id="gJA-rz-1LJ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="ToT-Wh-lCk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2HM-Io-Huh"/>
+                <constraint firstAttribute="bottom" secondItem="ToT-Wh-lCk" secondAttribute="bottom" id="2fv-Dk-X5G"/>
+                <constraint firstAttribute="trailing" secondItem="ToT-Wh-lCk" secondAttribute="trailing" id="P65-yJ-efS"/>
+                <constraint firstItem="ToT-Wh-lCk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qoa-9Y-zvf"/>
+            </constraints>
+            <connections>
+                <outlet property="signLabel" destination="hun-VN-um8" id="o5b-L1-SeI"/>
+                <outlet property="titleLabel" destination="taG-xT-4t8" id="6rZ-Xj-9tf"/>
+                <outlet property="viewWrapper" destination="HLu-JY-PyO" id="BZP-Ak-WKt"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="52"/>
+        </collectionViewCell>
+    </objects>
+</document>
