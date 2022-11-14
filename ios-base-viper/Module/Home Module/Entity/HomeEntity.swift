@@ -58,7 +58,7 @@ struct ShowModel: Codable {
 
 struct ShowModelDetailWithPrice: Codable {
     let chg: Double
-    let price: Double
+    let price: Double?
     let type: String
     let value: Date
 }

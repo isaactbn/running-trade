@@ -31,6 +31,7 @@ class HomeVC: BaseVC, HomeView {
     var symbolListAll: [String] = ["AAPL", "GOOG", "UNVR", "BBCA", "DRMA"]
     var filterList: [String] = []
     var symbolList: [String] = ["AAPL", "GOOG", "UNVR", "BBCA", "DRMA"]
+    var dataListAll: ShowModel?
     var dataList: ShowModel?
     var isFirstData: Bool = true
     var symbol: String = "aapl"
@@ -84,13 +85,14 @@ class HomeVC: BaseVC, HomeView {
                 }
             }
             
-            dataList = ShowModel(timeStamp: timeStampData, volume: volumeData, price: priceData)
+            dataListAll = ShowModel(timeStamp: timeStampData, volume: volumeData, price: priceData)
+            dataList = dataListAll
         } else {
             data.forEach{ (x) in
                 x.timestamp?.forEach{ (y) in
                     if y == x.timestamp?[0] {
                         let newModel = ShowModelDetailWithPrice(chg: chg, price: price, type: x.meta?.symbol ?? "", value: Date())
-                        dataList?.timeStamp?.append(newModel)
+                        dataListAll?.timeStamp?.append(newModel)
                     }
                     
                 }
@@ -98,10 +100,16 @@ class HomeVC: BaseVC, HomeView {
                 x.indicators?.quote?[0].volume.forEach{ (y) in
                     if y == x.indicators?.quote?[0].volume[0] {
                         let newModel = ShowModelDetailInt(type: x.meta?.symbol ?? "", value: y ?? 0)
-                        dataList?.volume?.append(newModel)
+                        dataListAll?.volume?.append(newModel)
                     }
                 }
             }
+            
+            dataList = dataListAll
+        }
+        
+        if isFilterActive {
+            setupFilter()
         }
         
         setupPresenter()
@@ -122,13 +130,20 @@ class HomeVC: BaseVC, HomeView {
             let newModel = ShowModelDetailDouble(type:"-", value: 0)
             priceData.append(newModel)
             
-            dataList = ShowModel(timeStamp: timeStampData, volume: volumeData, price: priceData)
+            dataListAll = ShowModel(timeStamp: timeStampData, volume: volumeData, price: priceData)
+            dataList = dataListAll
         } else {
             let timeStampModel = ShowModelDetailWithPrice(chg: 0, price: 0, type:"-", value: Date())
-            dataList?.timeStamp?.append(timeStampModel)
+            dataListAll?.timeStamp?.append(timeStampModel)
             
             let volumeModel = ShowModelDetailInt(type: "-", value: 0)
-            dataList?.volume?.append(volumeModel)
+            dataListAll?.volume?.append(volumeModel)
+            
+            dataList = dataListAll
+        }
+        
+        if isFilterActive {
+            setupFilter()
         }
         
         setupPresenter()
@@ -187,17 +202,60 @@ class HomeVC: BaseVC, HomeView {
         tableView.reloadData()
     }
     
+    private func setupFilter() {
+        var timeStampData: [ShowModelDetailWithPrice] = []
+        var volumeData: [ShowModelDetailInt] = []
+        var priceData: [ShowModelDetailDouble] = []
+
+        dataListAll?.timeStamp?.forEach{ (x) in
+            symbolList.forEach{ (result) in
+                if result == x.type {
+                    let newModel = ShowModelDetailWithPrice(chg: x.chg, price: x.price, type: x.type, value: x.value)
+                    timeStampData.append(newModel)
+                }
+            }
+        }
+
+        dataListAll?.volume?.forEach{ (x) in
+            symbolList.forEach{ (result) in
+                if result == x.type {
+                    let newModel = ShowModelDetailInt(type: x.type, value: x.value)
+                    volumeData.append(newModel)
+                }
+            }
+        }
+
+        dataListAll?.price?.forEach{ (x) in
+            symbolList.forEach{ (result) in
+                if result == x.type {
+                    let newModel = ShowModelDetailDouble(type: x.type, value: x.value)
+                    priceData.append(newModel)
+                }
+            }
+        }
+
+        dataList = ShowModel(timeStamp: timeStampData, volume: volumeData, price: priceData)
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
     @IBAction func switchButtonAct(_ sender: Any) {
         isFilterActive.toggle()
         if isFilterActive {
             if filterList.count > 0 {
                 symbolList = filterList
                 count = 3
+                setupFilter()
+                setupPresenter()
             } else {
                 symbolList = symbolListAll
+                dataList = dataListAll
             }
         } else {
             symbolList = symbolListAll
+            dataList = dataListAll
         }
     }
 }
@@ -237,7 +295,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
             if count != 0 {
                 let idx = (count - 1) - indexPath.row
                 let type = dataList?.timeStamp?[idx].type
-                let lastValue = dataList?.timeStamp?[idx - 1].price ?? 0
+                let lastValue = idx > 0 ? dataList?.timeStamp?[idx - 1].price ?? 0 : 0
                 let value = dataList?.timeStamp?[idx].price ?? 0
                 let chgValue = dataList?.timeStamp?[idx].chg ?? 0
                 let price = Double(round(10 * value) / 10)
@@ -245,9 +303,9 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
                 if type != "-" {
                     cell.stockLabel.text = type
                     cell.priceLabel.text = String(price)
-                    cell.volumeLabel.text = dataList?.volume?[idx].value.thousandSeparatorFormat()
+                    cell.volumeLabel.text = idx > ((dataList?.volume?.count ?? 1) - 1) ? "-" : dataList?.volume?[idx].value.thousandSeparatorFormat()
                     cell.chgLabel.text = chgValue.percentageFormat()
-                    cell.timeLabel.text = dataList?.timeStamp?[idx].value.formattedDateString()
+                    cell.timeLabel.text = idx > ((dataList?.timeStamp?.count ?? 1) - 1) ? Date().formattedDateString() : dataList?.timeStamp?[idx].value.formattedDateString()
                     if lastValue < value {
                         cell.actLabel.text = "SD"
                         cell.actLabel.textColor = #colorLiteral(red: 1, green: 0.2012884617, blue: 0.196865201, alpha: 1)
@@ -275,8 +333,11 @@ extension HomeVC: HandleFilter {
     func selectedFilter(data: [String]) {
         symbolList = data
         filterList = data
+        isFilterActive = true
         switchBtn.isOn = true
         
         count = 3
+        setupFilter()
+        setupPresenter()
     }
 }
